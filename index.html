@@ -32,7 +32,17 @@
             </div>
         </section>
     </main>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CVDPF8BQQK"></script>
+    <script type="module">
+        import { main } from "./main.js";
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    <script type="module" src="main.js"></script>
+        gtag('config', 'G-CVDPF8BQQK');
+        main(gtag);
+    </script>
 </body>
 </html>

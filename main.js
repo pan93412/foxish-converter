@@ -1,17 +1,27 @@
 import convertToFoxish from "./replacer.js";
 
-const src = /** @type {HTMLTextAreaElement} */ (document.getElementById("foxish-source"));
-const tgt = /** @type {HTMLTextAreaElement} */ (document.getElementById("foxish-target"));
-
 /**
- * @param {string} text
+ * @param {Function} gtag 
  */
-function setTarget(text) {
-    tgt.value = text;
+export function main(gtag) {
+    const src = /** @type {HTMLTextAreaElement} */ (document.getElementById("foxish-source"));
+    const tgt = /** @type {HTMLTextAreaElement} */ (document.getElementById("foxish-target"));
+
+    /**
+     * @param {string} text
+     */
+    function setTarget(text) {
+        tgt.value = text;
+    }
+
+    src.addEventListener("input", () => {
+        setTarget(convertToFoxish(src.value));
+
+        gtag('event', 'translate', {
+            'event_category': 'engagement',
+            'event_label': 'translate',
+        });
+    });
+
+    setTarget(convertToFoxish(""));
 }
-
-src.addEventListener("input", () => {
-    setTarget(convertToFoxish(src.value));
-});
-
-setTarget(convertToFoxish(""));
