@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Foxish converter</title>
+</head>
+<body>
+    <main>
+        <section class='section has-background-light'>
+            <h1 class="title">Foxish Converter</h1>
+            <h2 class="subtitle">利用大數據及工人智慧製作出的 Foxish 翻譯器。</h2>
+        </section>
+        <section class='section'>
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label" for="foxish-source">原文 [英文]</label>
+                            <textarea class="textarea" id="foxish-source"></textarea>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="field">
+                            <label class="label" for="foxish-target">翻譯 [Foxish]</label>
+                            <textarea class="textarea" id="foxish-target" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
